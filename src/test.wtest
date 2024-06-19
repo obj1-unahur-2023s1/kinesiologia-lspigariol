@@ -1,0 +1,21 @@
+import kinesiologia.*
+
+describe "tests de punto 2 - rutinas"{
+
+const magneto = new Magneto()
+
+const leo = new Paciente(edad = 40, dolor = 10, fortaleza = 20, rutina=[new Minitrap(),new Bicicleta(),magneto])
+//Leonardo, 40 años de edad, nivel de dolor 10, fortaleza 20.
+
+
+//Milena no puede hacer la rutina que tiene asignada.
+test "Leonardo puede hacer la rutina que tiene asignada" {
+	assert.that(leo.puedeHacerRutina())
+}
+
+test "Después de hacer rutina, leo baja dolor y aumenta fortaleza "{
+	leo.realizarSesion()
+	assert.equals(5.4, leo.dolor())
+	assert.equals(25, leo.fortaleza())
+}
+}
